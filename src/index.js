@@ -1,17 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import TotalFollowers from "./components/TotalFollowers";
+import { UserFollowers, UserOverviews } from "./user-data";
+import OverviewToday from "./components/OverviewToday";
+import "./css/Dashboard.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const container = document.querySelector("#content");
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      darkMode: false,
+    };
+  }
+  render() {
+    return (
+      <main
+        className={`main-wrapper ${
+          this.state.darkMode ? "dark-theme" : "light-theme"
+        }`}>
+        <TotalFollowers
+          darkMode={this.state.darkMode}
+          toggleFn={this.switchTheme}
+          userData={UserFollowers}
+        />
+        <OverviewToday
+          darkMode={this.state.darkMode}
+          userData={UserOverviews}
+        />
+      </main>
+    );
+  }
+  switchTheme = () => {
+    this.setState({
+      darkMode: !this.state.darkMode,
+    });
+  };
+}
+
+ReactDOM.render(<Dashboard />, container);

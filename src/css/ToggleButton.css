@@ -1,0 +1,40 @@
+@import "./variables.css";
+
+/* Toggle  */
+#toggle {
+  display: flex;
+  width: 46px;
+  height: 24px;
+  border-radius: 40px;
+  padding: 3px 0;
+  position: relative;
+  outline: none;
+  border: none;
+}
+#toggle .circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  margin: 0 4px;
+  transition: all .3s;
+}
+
+/* Light Mode Styles  */
+.toggle.light-theme {
+  background-color: var(--toggle-light);
+}
+.toggle.light-theme .circle {
+  background-color: var(--very-pale-blue);
+  right: 0;
+}
+
+/* Dark Mode Styles  */
+
+.toggle.dark-theme {
+  background-image: var(--toggle-dark);
+}
+.toggle.dark-theme .circle {
+  background-color: var(--dark-desaturated-blue);
+  left: 0;
+}

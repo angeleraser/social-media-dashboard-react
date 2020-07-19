@@ -1,0 +1,125 @@
+@import "../css/variables.css";
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 26px;
+  max-width: 327px;
+  border-radius: 5px;
+  position: relative;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.social-card .border {
+  width: 100%;
+  height: 6px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.social-card .border.facebook-color {
+  background-color: var(--facebook);
+}
+.social-card .border.instagram-color {
+  background-image: var(--instagram);
+}
+.social-card .border.youtube-color {
+  background-color: var(--youtube);
+}
+.social-card .border.twitter-color {
+  background-color: var(--twitter);
+}
+.social-card .user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.social-card .user h2 {
+  margin-left: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.social-card .icon {
+  height: 20px;
+  width: 20px;
+}
+.social-card .followers-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.social-card .followers-count h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.social-card .followers-count p {
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+.social-card .followers-count .today {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 28px;
+  font-weight: 700;
+}
+.social-card .followers-count svg {
+  margin-right: 4px;
+}
+.social-card .followers-count .today.up {
+  color: var(--lime-green);
+}
+.social-card .followers-count .today.down {
+  color: var(--bright-red);
+}
+/* Light Mode Styles  */
+.social-card.light-theme {
+  background-color: var(--light-blue);
+}
+.social-card.light-theme:hover {
+  background-color: #e1e3f0;
+}
+.social-card.light-theme:active {
+  transform: scale(0.99);
+}
+.social-card.light-theme .followers-count h2 {
+  color: var(--very-dark-blue-3);
+}
+.social-card.light-theme .user h2,
+.social-card.light-theme .followers-count p {
+  color: var(--dark-gray-blue);
+}
+/* Dark Mode Styles  */
+.social-card.dark-theme {
+  background-color: var(--dark-desaturated-blue);
+}
+.social-card.dark-theme:hover {
+  background-color: #333a56;
+}
+.social-card.dark-theme:active {
+  transform: scale(0.99);
+}
+.social-card.dark-theme .followers-count h2 {
+  color: var(--white);
+}
+.social-card.dark-theme .user h2,
+.social-card.dark-theme .followers-count p {
+  color: var(--desaturated-blue);
+}
+
+@media screen and (min-width: 1280px) {
+  .social-card {
+    max-width: 256px;
+  }
+  .social-card .followers-count h2 {
+    font-size: 44px;
+  }
+}
