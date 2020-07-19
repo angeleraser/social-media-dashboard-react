@@ -5,7 +5,7 @@
   position: relative;
   width: 100%;
   margin-top: 45px;
-  padding: 0 25px;
+  padding: 0 25px 25px;
 }
 
 .overview-today .content-wrapper {
@@ -42,5 +42,8 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
     row-gap: 24px;
+  }
+  .overview-today {
+    padding-bottom: 0;
   }
 }
